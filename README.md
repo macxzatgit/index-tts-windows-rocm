@@ -1,6 +1,6 @@
 # IndexTTS on Windows with AMD ROCm
 
-A Windows-focused fork with a tested AMD ROCm PyTorch setup for IndexTTS 2.5. The steps below were verified on Windows 11 with an AMD Radeon RX 9060 XT 16 GB and Python 3.12.
+A Windows-focused fork with a tested AMD ROCm PyTorch setup for IndexTTS 2.5. Requires a ROCm-supported AMD GPU with at least 12 GB of VRAM. The steps below were verified on Windows 11 with an AMD Radeon RX 9060 XT 16 GB and Python 3.12.
 
 ## Installation
 
