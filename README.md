@@ -6,10 +6,9 @@ A Windows-focused fork with a tested AMD ROCm PyTorch setup for IndexTTS 2.5. Re
 
 ### 1. Create the environment and clone this fork
 
-Use PowerShell. Clone the `amd-rocm-windows` branch explicitly; the fork's default `main` branch does not contain these AMD setup files. Calling the virtual environment's Python directly avoids PowerShell script-activation policy changes.
+Open PowerShell in the parent directory where you want the repository cloned. The commands below stay in that directory, clone the `amd-rocm-windows` branch, and then enter the new repository folder. The fork's default `main` branch does not contain these AMD setup files. Calling the virtual environment's Python directly avoids PowerShell script-activation policy changes.
 
 ```powershell
-Set-Location $env:USERPROFILE
 git clone --branch amd-rocm-windows --single-branch https://github.com/macxzatgit/index-tts-windows-rocm.git
 cd .\index-tts-windows-rocm
 py -3.12 -m venv .venv
