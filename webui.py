@@ -31,7 +31,7 @@ parser.add_argument("--deepspeed", action="store_true", default=False, help="Use
 parser.add_argument("--cuda_kernel", action="store_true", default=False, help="Use CUDA kernel for inference if available")
 parser.add_argument("--accel", action="store_true", default=False, help="Use GPT2 acceleration engine if available")
 parser.add_argument("--torch_compile", action="store_true", default=False, help="Use torch.compile to optimize s2mel if available")
-parser.add_argument("--qwen_emo", action="store_true", default=False, help="Load QwenEmotion even on a low-VRAM GPU, where it is skipped by default")
+parser.add_argument("--qwen_emo", action="store_true", default=False, help="Load QwenEmotion for emotion-from-text control (uses extra memory)")
 parser.add_argument("--gui_seg_tokens", type=int, default=120, help="GUI: Max tokens per generation segment")
 parser.add_argument("--share", action="store_true", default=False, help="Enable the sharing mode of Gradio WebUI for easier use on platforms such as Colab.")
 
@@ -127,7 +127,7 @@ _vram_gb = detect_vram_gb()
 LOW_VRAM = _vram_gb is not None and _vram_gb < LOW_VRAM_THRESHOLD_GB
 
 HALF_PRECISION = cmd_args.fp16 or LOW_VRAM
-LOAD_QWEN_EMO = cmd_args.qwen_emo or not LOW_VRAM
+LOAD_QWEN_EMO = cmd_args.qwen_emo
 
 if LOW_VRAM:
     print(
